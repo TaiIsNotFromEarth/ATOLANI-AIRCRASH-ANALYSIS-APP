@@ -48,13 +48,12 @@ Q1_fatalities = df['Fatalities (air)'].quantile(0.25)
 Q3_fatalities = df['Fatalities (air)'].quantile(0.75)
 IQR_fatalities = Q3_fatalities - Q1_fatalities
 
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4 = st.columns(4)
 
-col1.metric("Total number of accidents",total_accidents)
-col2.metric("Total number of fatalities", total_fatalities)
-col3.metric("Total number of survivors", total_survivors)
-col4.metric("Survival rate", survival_rate)
-col5.metric("IQR Fatalities", IQR_fatalities)
+col1.metric("Survival rate", survival_rate)
+col2.metric("Total number of survivors", total_survivors)
+col3.metric("Total number of fatalities", total_fatalities)
+col4.metric("Total number of accidents",total_accidents)
 
 st.write(df)
 
